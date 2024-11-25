@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CiudadPro</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ciudad { color: rgb(0, 240, 0); }
+    .Pro { color: rgb(255, 255, 255); }
+</style>
+  
+</head>
+
+<body>
+  <header>
+    <h1><strong><span class="ciudad">Ciudad</span><span class="Pro">PRO</span></strong></h1>
+        <!-- Creacion de los botones en la Pagina  -->
+
+    <button id="infoButton">Información</button>
+    <button id="alertsButton">Alertas de nuevas Ofertas</button>
+    <button id="loginButton">Iniciar Sesión</button>
+    <button id="registerButton">Registrarse</button>
+    <button id="moreContentButton">Más Contenido</button>
+
+  </header>
+
+  <div class="container">
+    <!-- Menu desplegable de departamentos -->
+    <div class="search-section">
+      <h2>Busqueda Por Ubicacion</h2>
+      <select id="departmentSelect">
+        <option value="">Selecciona un departamento</option>
+        <option value="amazonas">Amazonas</option>
+        <option value="antioquia">Antioquia</option>
+        <option value="arauca">Arauca</option>
+        <option value="atlantico">Atlántico</option>
+        <option value="bolivar">Bolívar</option>
+        <option value="boyaca">Boyacá</option>
+        <option value="caldas">Caldas</option>
+        <option value="caqueta">Caquetá</option>
+        <option value="casanare">Casanare</option>
+        <option value="cauca">Cauca</option>
+        <option value="cesar">Cesar</option>
+        <option value="choco">Chocó</option>
+        <option value="cordoba">Córdoba</option>
+        <option value="cundinamarca">Cundinamarca</option>
+        <option value="guainia">Guainía</option>
+        <option value="guaviare">Guaviare</option>
+        <option value="huila">Huila</option>
+        <option value="laGuajira">La Guajira</option>
+        <option value="magdalena">Magdalena</option>
+        <option value="meta">Meta</option>
+        <option value="narino">Nariño</option>
+        <option value="norteDeSantander">Norte de Santander</option>
+        <option value="putumayo">Putumayo</option>
+        <option value="quindio">Quindío</option>
+        <option value="risaralda">Risaralda</option>
+        <option value="sanAndres">San Andrés, Providencia y Santa Catalina</option>
+        <option value="santander">Santander</option>
+        <option value="sucre">Sucre</option>
+        <option value="tolima">Tolima</option>
+        <option value="valleDelCauca">Valle del Cauca</option>
+        <option value="vaupes">Vaupés</option>
+        <option value="vichada">Vichada</option>
+      </select>
+
+      <!-- Menú desplegable de ciudades -->
+      <select id="citySelect">
+        <option value="">Selecciona una ciudad</option>
+      
+        <!-- Las ciudades se llenarán dinámicamente según el departamento -->
+      </select>
+
+      <!-- Menú desplegable de profesiones -->
+      <aside class="sidebar">
+        <h2>Profesiones</h2>
+        <select id="professionSelect">
+          <option value="">Selecciona una profesión</option>
+
+          <!-- Salud -->
+          <option value="enfermeria">Enfermería</option>
+          <option value="auxiliarEnfermeria">Auxiliar de enfermería</option>
+          <option value="radiologia">Radiología</option>
+          <option value="laboratorioClinico">Laboratorio clínico</option>
+          <option value="optometria">Optometría</option>
+          <option value="odontologia">Odontología</option>
+          <option value="terapiaFisica">Terapia física</option>
+          <option value="terapiaOcupacional">Terapia ocupacional</option>
+          <option value="instrumentacionQuirurgica">Instrumentación quirúrgica</option>
+          <option value="nutricionDietetica">Nutrición y dietética</option>
+          <!-- Tecnología -->
+          <option value="tecnicoSistemas">Técnico en sistemas</option>
+          <option value="desarrolladorSoftware">Desarrollador de software</option>
+          <option value="analistaSistemas">Analista de sistemas</option>
+          <option value="tecnico de Redes">Técnico en redes</option>
+          <option value="ciberseguridad">Ciberseguridad</option>
+          <option value="diseno Grafico">Diseño gráfico</option>
+          <option value="Desarrollo Web">Desarrollo web</option>
+          <option value="automatizacion Industrial">Automatización industrial</option>
+          <!-- Industria -->
+          <option value="mecanicoIndustrial">Mecánico industrial</option>
+          <option value="electricista">Electricista</option>
+          <option value="soldador">Soldador</option>
+          <option value="operadorMaquinariaPesada">Operador de maquinaria pesada</option>
+          <option value="tecnicoMantenimientoIndustrial">Técnico en mantenimiento industrial</option>
+          <!-- Otros -->
+          <option value="contabilidad">Contabilidad</option>
+          <option value="administracionEmpresas">Administración de empresas</option>
+          <option value="marketing">Marketing</option>
+          <option value="recursosHumanos">Recursos humanos</option>
+          <option value="logistica">Logística</option>
+          <option value="gastronomia">Gastronomía</option>
+          <option value="belleza">Belleza</option>
+          <option value="construccion">Construcción</option>
+          <option value="agropecuaria">Agropecuaria</option>
+          <option value="artesanias">Artesanías</option>
+          <option value="carpinteria">Carpintería</option>
+          <option value="herreria">Herrería</option>
+          <option value="albanileria">Albañilería</option>
+          <option value="plomeria">Plomería</option>
+        </select>
+      </aside>
+
+      <button id="filtersButton">Filtros</button>
+      <!-- Menú desplegable de filtros -->
+      <div id="filtersMenu" class="filters-menu">
+        <label for="salaryRange">Rango Salarial:</label>
+        <select id="salaryRange">
+          <option value="">Selecciona un rango</option>
+          <option value="0-1000">$0 - $1,000</option>
+          <option value="1000-2000">$1,000 - $2,000</option>
+          <option value="2000-3000">$2,000 - $3,000</option>
+          <option value="3000+">$3,000+</option>
+        </select>
+
+        <label for="contractType">Tipo de Contrato:</label>
+        <select id="contractType">
+          <option value="">Selecciona un tipo</option>
+          <option value="indefinido">Indefinido</option>
+          <option value="temporal">Temporal</option>
+          <option value="freelance">Freelance</option>
+        </select>
+
+        <label for="experienceLevel">Nivel de Experiencia:</label>
+        <select id="experienceLevel">
+          <option value="">Selecciona un nivel</option>
+          <option value="junior">Junior</option>
+          <option value="mid">Mid</option>
+          <option value="senior">Senior</option>
+        </select>
+
+        <label for="benefits">Beneficios:</label>
+        <input type="text" id="benefits" placeholder="Ej. Seguro de salud, transporte">
+      </div>
+
+      <!-- Botón de búsqueda -->
+      <button id="searchButton">Buscar</button>
+    </div>
+
+
+    <!--Boton de Restablecer Menu-->
+    <div id="professionals">
+      <h2>Resultados de la búsqueda 
+        <button id="resetButton" style="margin-left: 10px;">Restablecer</button>
+      </h2>
+      <ul id="professionList"></ul>
+    </div>
+    
+     
+    <!-- Modal de Información -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span id="closeInfoModal" class="close">&times;</span>
+        <h2>¿Qué es CiudadPRO?</h2>
+        <p>CiudadPRO es una plataforma que conecta a los usuarios con profesionales de diferentes áreas, desde salud y tecnología hasta industria y servicios varios. Permite buscar profesionales por departamento, ciudad, y profesión, brindando opciones para contactar a expertos en cada área.</p>
+      </div>
+    </div>
+
+    <!-- Modal de Iniciar Sesión -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span id="closeLoginModal" class="close">&times;</span>
+        <h2>Iniciar Sesión</h2>
+        <form>
+          <label for="loginEmail">Correo electrónico:</label>
+          <input type="email" id="loginEmail" required>
+
+          <label for="loginPassword">Contraseña:</label>
+          <input type="password" id="loginPassword" required>
+
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Registrarse -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span id="closeRegisterModal" class="close">&times;</span>
+        <h2>Registrarse</h2>
+        <form>
+          <label for="registerName">Nombre completo:</label>
+          <input type="text" id="registerName" required>
+
+          <label for="registerEmail">Correo electrónico:</label>
+          <input type="email" id="registerEmail" required>
+
+          <label for="registerPassword">Contraseña:</label>
+          <input type="password" id="registerPassword" required>
+
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+    </div>
+    <!-- Menú desplegable de "Más Contenido" -->
+    <div id="moreContentMenu" class="dropdown-menu">
+  <a id="guides" href="#">Guías y Consejos</a>
+  <a id="successStories" href="#">Historias de Éxito</a>
+  <a id="corporateBlog" href="#">Blog Corporativo</a>
+  <a id="faq" href="#">Preguntas Frecuentes</a>
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
